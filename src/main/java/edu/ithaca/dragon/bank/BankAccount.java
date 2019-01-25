@@ -36,10 +36,35 @@ public class BankAccount {
 
 
     public static boolean isEmailValid(String email){
-        if (email.indexOf('@') == -1){
+        int count =0;
+        int count2=0;
+        char check= '@';
+        char check2= '.';
+        for(int i=0; i<email.length(); i++){
+            if(email.charAt(i) == check){
+                count++;
+            }
+            if(email.charAt(i) == check2 && email.charAt(i+1)== check){
+                count2++;
+            }
+        }
+        if(count>1 || count2>0){
             return false;
         }
-        else {
+
+        if (email.indexOf('@') == -1 || email.indexOf('@') == 0){
+            return false;
+        } else if (email.length()<=4) {
+            return false;
+        } else if(email.indexOf('!') != -1 || email.indexOf('#') != -1 || email.indexOf('$') != -1 || email.indexOf('%') != -1 || email.indexOf('^') != -1 || email.indexOf('*') != -1 || email.indexOf('&') != -1){
+            return false;
+        }else if (email.indexOf('.')==0) {
+            return false;
+        } else if (!(email.substring(email.length()-4).equals(".com")) && !(email.substring(email.length()-4).equals(".edu"))){
+            return false;
+        } else if((email.substring(email.length()-5).equals("..com")) || (email.substring(email.length()-5).equals("..edu"))){
+            return false;
+        } else {
             return true;
         }
     }

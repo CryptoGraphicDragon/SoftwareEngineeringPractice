@@ -36,15 +36,14 @@ class BankAccountTest {
         assertFalse(BankAccount.isEmailValid("apple.com"));
         assertFalse(BankAccount.isEmailValid("apple"));
         assertFalse(BankAccount.isEmailValid("a.b.com"));
-        //tests code does not pass:
         assertFalse(BankAccount.isEmailValid("a@b"));
-        assertFalse(BankAccount.isEmailValid("a@@b.com"));
         assertFalse(BankAccount.isEmailValid("a@b..com"));
         assertFalse(BankAccount.isEmailValid("a@b@com"));
-        assertFalse(BankAccount.isEmailValid("#@%$^&%@^*&.com"));
         assertFalse(BankAccount.isEmailValid("a@b.web"));
-        assertFalse(BankAccount.isEmailValid("@b.com"));
         assertFalse(BankAccount.isEmailValid(".a@b.com"));
+        assertFalse(BankAccount.isEmailValid("#@%$^&%@^*&.com"));
+        assertFalse(BankAccount.isEmailValid("@b.com"));
+        assertFalse(BankAccount.isEmailValid("a@@b.com"));
         assertFalse(BankAccount.isEmailValid("a.@b.com"));
     }
 
