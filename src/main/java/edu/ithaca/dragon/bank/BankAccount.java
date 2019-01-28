@@ -20,6 +20,9 @@ public class BankAccount {
         }
     }
 
+    /*
+    Checks to see if the amount is greater than 0 and has only two decimal places
+     */
     public static boolean isAmountValid(double amount){
         if(amount<0){
             return false;
@@ -39,7 +42,7 @@ public class BankAccount {
     }
 
     /**
-     * @post reduces the balance by amount if amount is non-negative and smaller than balance
+     * @post reduces the balance by amount if amount is non-negative, has less than 2 decimal places, and is smaller than balance
      */
     public void withdraw (double amount)  {
         if(balance>=amount && isAmountValid(amount)) {
@@ -50,6 +53,10 @@ public class BankAccount {
     }
 
 
+    /*
+    Can't have garbage characters, can't have more than one @, can't have extra periods in weird places, need to end in .edu or .com, any domain
+    is okay, can't have anything but letters in the domain, can use numbers and other characters in main address
+     */
     public static boolean isEmailValid(String email){
         int count =0;
         int count2=0;
