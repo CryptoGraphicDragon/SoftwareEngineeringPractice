@@ -18,6 +18,10 @@ public class BankAccount {
         }
     }
 
+    public static boolean isAmountValid(double amount){
+        return false;
+    }
+
     public double getBalance(){
         return balance;
     }
